@@ -10,7 +10,7 @@
 
 @interface HGAlertView ()
 
-@property (nonatomic, weak) HGAlerViewCompletionHandler handler;
+@property (nonatomic, strong) HGAlerViewCompletionHandler handler;
 
 
 @end
