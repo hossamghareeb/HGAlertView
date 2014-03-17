@@ -57,8 +57,8 @@
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    
-    self.handler(self, buttonIndex);
+    if(self.handler != NULL)
+        self.handler(self, buttonIndex);
 }
 
 @end
