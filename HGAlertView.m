@@ -36,9 +36,14 @@
     return self;
 }
 
--(id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...
+-(id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitlesArr:(NSArray *)otherButtonTitles
 {
-    self = [super initWithTitle:title message:message delegate:delegate cancelButtonTitle:cancelButtonTitle otherButtonTitles:otherButtonTitles, nil];
+    self = [super initWithTitle:title message:message delegate:delegate cancelButtonTitle:cancelButtonTitle otherButtonTitles: nil];
+    for (NSString *title in otherButtonTitles) {
+        if ([title isKindOfClass:[NSString class]]) {
+            [self addButtonWithTitle:title];
+        }
+    }
     if (self) {
         self.delegate = self;
     }

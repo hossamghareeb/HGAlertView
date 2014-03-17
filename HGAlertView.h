@@ -14,9 +14,7 @@ typedef void (^HGAlerViewCompletionHandler)(id alertView, int buttonIndex);
 @interface HGAlertView : UIAlertView <UIAlertViewDelegate>
 
 
-
--(id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...;
-
+-(id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitlesArr:(NSArray *)otherButtonTitles;
 -(void)showWithCompltionHandler:(HGAlerViewCompletionHandler)handler;
 
 @end
